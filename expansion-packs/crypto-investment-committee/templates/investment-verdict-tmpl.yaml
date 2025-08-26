@@ -1,0 +1,76 @@
+# Investment Verdict Template
+# Used for final investment recommendations
+
+metadata:
+  template_name: investment-verdict
+  version: 1.0.0
+  description: Structured investment recommendation with clear action items
+
+verdict_structure:
+  header:
+    timestamp: "{{timestamp}}"
+    query_context: "{{original_query}}"
+    analysis_type: "{{analysis_type}}"  # quick/standard/deep-dive
+  
+  recommendation:
+    action: ""  # BUY/SELL/HOLD/AVOID
+    asset: ""
+    confidence_level: 0  # 0-100%
+    conviction_rating: ""  # low/medium/high/very-high
+  
+  rationale:
+    thesis_summary: ""
+    key_drivers:
+      - factor: ""
+        impact: ""  # positive/negative
+        weight: ""  # high/medium/low
+    supporting_evidence:
+      technical: []
+      fundamental: []
+      sentiment: []
+      macro: []
+  
+  position_details:
+    recommended_allocation: ""  # % of portfolio
+    entry_strategy:
+      type: ""  # immediate/scaled/wait-for-dip
+      price_targets: []
+      timeframe: ""
+    position_sizing:
+      initial: ""
+      maximum: ""
+      risk_budget: ""
+    
+  risk_management:
+    risk_score: 0  # 1-10
+    key_risks:
+      - risk: ""
+        probability: ""  # low/medium/high
+        impact: ""  # low/medium/high
+        mitigation: ""
+    stop_loss:
+      level: ""
+      type: ""  # hard/trailing/mental
+    take_profit:
+      targets: []
+      strategy: ""  # scaled/all-at-once
+    monitoring_triggers:
+      - condition: ""
+        action: ""
+  
+  committee_alignment:
+    consensus_level: ""  # strong/moderate/weak/divided
+    supporting_agents: []
+    dissenting_agents: []
+    key_disagreements: []
+  
+  follow_up:
+    review_schedule: ""
+    update_triggers: []
+    next_analysis_date: ""
+
+output_format:
+  type: json
+  pretty_print: true
+  include_disclaimer: true
+  disclaimer_text: "This is AI-generated analysis for educational purposes only. Not financial advice."

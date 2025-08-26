@@ -1,0 +1,65 @@
+# Committee Report Template
+# Used for full investment committee analysis reports
+
+metadata:
+  template_name: committee-report
+  version: 1.0.0
+  description: Full committee analysis report with all phases documented
+
+report_structure:
+  header:
+    session_id: "{{session_id}}"
+    timestamp: "{{timestamp}}"
+    query: "{{user_query}}"
+    committee_members: "{{activated_agents}}"
+  
+  committee_phases:
+    phase_1_activation:
+      description: "Agent activation and query analysis"
+      activated_agents: []
+      activation_reasoning: ""
+    
+    phase_2_individual_analysis:
+      description: "Individual agent analyses"
+      analyses: {}
+      # Each agent provides:
+      # - position: bullish/bearish/neutral
+      # - key_points: []
+      # - confidence: 0-100
+      # - sources: []
+    
+    phase_3_round_table:
+      description: "Sequential agent presentations"
+      presentations: []
+      # Format: "[Agent Name - Role]: [Analysis]"
+    
+    phase_4_debate:
+      description: "Challenge and defense round"
+      challenges: []
+      # Format: "[Challenger → Target]: [Challenge]"
+      # Format: "[Target responds]: [Defense]"
+    
+    phase_5_validation:
+      description: "Cross-validation and verification"
+      validations: []
+      gaps_identified: []
+    
+    phase_6_consensus:
+      description: "Consensus building"
+      agreements: []
+      disagreements: []
+      emergent_insights: []
+    
+    phase_7_verdict:
+      description: "Final CIO synthesis"
+      recommendation: ""
+      confidence_score: 0
+      reasoning: ""
+      action_items: []
+      risk_considerations: []
+      exit_conditions: []
+
+output_format:
+  type: json
+  pretty_print: true
+  include_metadata: true

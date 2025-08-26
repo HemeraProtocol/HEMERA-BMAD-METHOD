@@ -1,0 +1,71 @@
+# Daily Brief Template
+# Used for the three daily investment questions
+
+metadata:
+  template_name: daily-brief
+  version: 1.0.0
+  description: Daily market analysis answering three core questions
+
+brief_structure:
+  header:
+    date: "{{date}}"
+    market_regime: "{{market_regime}}"  # bull/bear/crab
+    generated_at: "{{timestamp}}"
+  
+  question_1_market_movement:
+    question: "Why is BTC/ETH up/down today?"
+    btc_analysis:
+      price_change: "{{btc_change}}"
+      primary_driver: ""
+      supporting_factors: []
+    eth_analysis:
+      price_change: "{{eth_change}}"
+      primary_driver: ""
+      supporting_factors: []
+    committee_consensus: ""
+    alternative_view: ""
+    confidence: 0
+  
+  question_2_portfolio_decision:
+    question: "Should I keep/buy/sell my portfolio?"
+    recommendation: ""  # HOLD/ACCUMULATE/REDUCE/EXIT
+    confidence: 0
+    rationale:
+      key_reasons: []
+      risk_considerations: []
+    if_buying:
+      position_size: ""
+      entry_zone: ""
+      stop_loss: ""
+    if_selling:
+      reduce_percentage: ""
+      target_price: ""
+      reasoning: ""
+    risk_warning: ""
+  
+  question_3_opportunities:
+    question: "Any new assets showing strong potential?"
+    top_pick:
+      asset: ""
+      narrative: ""
+      why_interesting: ""
+      risk_level: 0  # 1-10
+      potential_scenarios:
+        conservative: ""
+        base: ""
+        optimistic: ""
+      timeframe: ""  # short/medium/long
+    also_watching:
+      - asset: ""
+        reason: ""
+    committee_note: ""
+  
+  summary:
+    action_items: []
+    alerts_for_tomorrow: []
+    next_update: "{{next_update_time}}"
+
+output_format:
+  type: json
+  pretty_print: true
+  cache_duration_minutes: 60

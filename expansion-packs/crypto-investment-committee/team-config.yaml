@@ -1,0 +1,177 @@
+# Crypto Investment Committee Team Configuration
+
+bundle:
+  name: Crypto Investment Committee
+  icon: 💼
+  description: Multi-agent investment committee for institutional-grade crypto analysis
+  version: 1.0.0
+  
+team_structure:
+  orchestrator: crypto-cio-orchestrator
+  
+  specialists:
+    risk_analysis:
+      - crypto-risk-manager
+    
+    technical_analysis:
+      - crypto-technical-analyst
+    
+    market_analysis:
+      - crypto-market-sentiment
+      - crypto-contrarian
+    
+    domain_experts:
+      - crypto-eth-specialist-vitalik
+    
+    macro_strategists:
+      - crypto-macro-strategist-powell
+      - crypto-macro-strategist-trump  
+      - crypto-macro-strategist-sec
+
+workflows:
+  primary:
+    - daily-market-analysis
+    - investment-committee-meeting
+    - consensus-building
+  
+  specialized:
+    - quick-analysis
+    - deep-dive-research
+    - risk-assessment
+    - opportunity-scanning
+
+interaction_matrix:
+  # Define how agents interact with each other
+  challenge_pairs:
+    - challenger: crypto-risk-manager
+      challenged: [crypto-technical-analyst, crypto-market-sentiment]
+      topics: [bullish predictions, FOMO risks]
+    
+    - challenger: crypto-contrarian
+      challenged: [all]
+      topics: [consensus views, popular narratives]
+  
+  validation_pairs:
+    - validator: crypto-risk-manager
+      validated: crypto-technical-analyst
+      topics: [technical signals, entry/exit points]
+    
+    - validator: crypto-eth-specialist-vitalik
+      validated: crypto-market-sentiment
+      topics: [ETH ecosystem developments]
+
+activation_rules:
+  daily_questions:
+    why_market_move:
+      minimum_agents: 3
+      required:
+        - crypto-market-sentiment
+        - crypto-technical-analyst
+      contextual:
+        if_btc_focus: [crypto-macro-strategist-powell]
+        if_eth_focus: [crypto-eth-specialist-vitalik]
+        if_regulatory: [crypto-macro-strategist-sec]
+        if_macro_event: [crypto-macro-strategist-trump]
+      optional:
+        - crypto-contrarian
+    
+    portfolio_decision:
+      minimum_agents: 4
+      required:
+        - crypto-risk-manager
+        - crypto-technical-analyst
+        - crypto-market-sentiment
+      contextual:
+        based_on_holdings: true
+        based_on_market_conditions: true
+      optional:
+        - crypto-contrarian
+    
+    new_opportunities:
+      minimum_agents: 3
+      required:
+        - crypto-market-sentiment
+        - crypto-risk-manager
+      contextual:
+        if_defi: [crypto-eth-specialist-vitalik]
+        if_new_narrative: [crypto-contrarian]
+      optional:
+        - crypto-technical-analyst
+
+meeting_protocols:
+  phases:
+    1_opening:
+      owner: crypto-cio-orchestrator
+      duration: 30s
+      actions:
+        - State question/topic
+        - Announce activated agents
+        - Set discussion parameters
+    
+    2_individual_analysis:
+      owner: specialists
+      duration: 2-3min per agent
+      parallel: true
+      actions:
+        - Gather relevant data
+        - Apply analytical framework
+        - Form initial position
+    
+    3_round_table:
+      owner: crypto-cio-orchestrator
+      duration: 3-5min
+      sequential: true
+      actions:
+        - Each agent presents findings
+        - No interruptions allowed
+        - CIO notes key points
+    
+    4_debate:
+      owner: crypto-cio-orchestrator
+      duration: 2-3min
+      interactive: true
+      actions:
+        - Risk manager challenges
+        - Contrarian attacks consensus
+        - Agents defend positions
+    
+    5_synthesis:
+      owner: crypto-cio-orchestrator
+      duration: 1-2min
+      actions:
+        - Identify consensus
+        - Note divergence
+        - Form verdict
+        - Set confidence level
+
+quality_standards:
+  minimum_requirements:
+    - At least 3 diverse perspectives
+    - Risk assessment always included
+    - Data sources cited
+    - Confidence scores provided
+    - Clear actionable verdict
+  
+  optimal_targets:
+    - 5-7 agent perspectives
+    - Consensus on key points
+    - Divergence clearly explained
+    - Multiple scenarios considered
+    - Exit strategy defined
+
+performance_metrics:
+  response_time:
+    daily_questions: <30 seconds
+    custom_analysis: <60 seconds
+    deep_dive: <120 seconds
+  
+  quality_scores:
+    comprehensiveness: 0-100
+    accuracy: 0-100
+    actionability: 0-100
+    clarity: 0-100
+  
+  benchmark_comparison:
+    versus: [ChatGPT, Claude, Gemini]
+    dimensions: [accuracy, comprehensiveness, actionability, timeliness, user_satisfaction]
+    target: exceed_by_20_percent
